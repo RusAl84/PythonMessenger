@@ -37,8 +37,9 @@ def receive():
 
         client.send("NICK".encode('utf-8'))
         nickname = client.recv(1024)
-
+        nickname = nickname.decode('utf-8')
         nicknames.append(client)
+
         clients.append(client)
 
         print(f"Nickname of the client is {nickname}")
